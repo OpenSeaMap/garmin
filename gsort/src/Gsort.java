@@ -83,7 +83,7 @@ public class Gsort {
 			  Way way = new Way();
 			  way.tags = new ArrayList<String>();
 			  while ((inline = inbuff.readLine()) != null) {
-			  	while (!inline.endsWith(">")) {
+			  	while (!inline.trim().endsWith(">")) {
 			  		inline += inbuff.readLine();
 			  	}
 			  	if (inway) {

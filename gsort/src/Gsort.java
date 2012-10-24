@@ -65,11 +65,11 @@ public class Gsort {
 			  }
 			  buff.close();
 			  sort.close();
-
 			} catch (IOException e) {
 				System.out.println("Failed to open " + args[0]);
 				return;
 			}
+			
 			try {
 				File infile = new File(args[1]);
 				FileInputStream instream = new FileInputStream(infile);
@@ -83,6 +83,9 @@ public class Gsort {
 			  Way way = new Way();
 			  way.tags = new ArrayList<String>();
 			  while ((inline = inbuff.readLine()) != null) {
+			  	while (!inline.endsWith(">")) {
+			  		inline += inbuff.readLine();
+			  	}
 			  	if (inway) {
 			  		if (inline.contains("</way>")) {
 			  			inway = false;

@@ -151,7 +151,7 @@ public class Gsort {
 				outstream.close();
 				outfile.renameTo(infile);
 			} catch (IOException e) {
-				System.out.println("Unable to open " + args[1]);
+				System.out.println("File I/O error");
 				return;
 			}
 		} else {

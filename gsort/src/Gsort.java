@@ -23,12 +23,20 @@ public class Gsort {
 
 		class Way {
 			public ArrayList<String> tags;
+			public Way() {
+				tags = new ArrayList<String>();
+			}
 		}
 		
 		class Type {
 			public String key;
 			public String val;
 			public ArrayList<Way> objs;
+			public Type() {
+				key = "";
+				val = "";
+				objs = new ArrayList<Way>();
+			}
 		}
 		
 		ArrayList<Type> types = new ArrayList<Type>();
@@ -49,7 +57,6 @@ public class Gsort {
 			  				Type newtype = new Type();
 			  				newtype.key = keyval[0];
 			  				newtype.val = keyval[1];
-			  				newtype.objs = new ArrayList<Way>();
 			  				types.add(newtype);
 			  			} else {
 								System.out.println("Empty string: " + line);
@@ -66,7 +73,7 @@ public class Gsort {
 			  buff.close();
 			  sort.close();
 			} catch (IOException e) {
-				System.out.println("Failed to open " + args[0]);
+				System.out.println("File I/O error: " + args[0]);
 				return;
 			}
 			
@@ -81,7 +88,6 @@ public class Gsort {
 			  Boolean inway = false;
 			  Type match = null;
 			  Way way = new Way();
-			  way.tags = new ArrayList<String>();
 			  while ((inline = inbuff.readLine()) != null) {
 			  	while (!inline.trim().endsWith(">")) {
 			  		inline += inbuff.readLine();
@@ -111,7 +117,6 @@ public class Gsort {
 		  				if (match != null) {
 		  					match.objs.add(way);
 		  				  way = new Way();
-		  				  way.tags = new ArrayList<String>();
 		  				} else {
 		  					while (way.tags.size() > 0) {
 		  						outbuff.write(way.tags.remove(0));
@@ -149,9 +154,10 @@ public class Gsort {
 		  	outstream.flush();
 				outbuff.close();
 				outstream.close();
+				infile.delete();
 				outfile.renameTo(infile);
 			} catch (IOException e) {
-				System.out.println("File I/O error");
+				System.out.println("File I/O error: " + args[1]);
 				return;
 			}
 		} else {

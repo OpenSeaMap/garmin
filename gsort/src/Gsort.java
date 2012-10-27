@@ -79,11 +79,9 @@ public class Gsort {
 			
 			try {
 				File infile = new File(args[1]);
-				FileInputStream instream = new FileInputStream(infile);
-			  BufferedReader inbuff = new BufferedReader(new InputStreamReader(instream));
+			  BufferedReader inbuff = new BufferedReader(new InputStreamReader(new FileInputStream(infile), "UTF-8"));
 				File outfile = new File("tmp");
-				FileOutputStream outstream = new FileOutputStream(outfile);
-			  BufferedWriter outbuff = new BufferedWriter(new OutputStreamWriter(outstream));
+			  BufferedWriter outbuff = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(outfile), "UTF-8"));
 			  String inline;
 			  Boolean inway = false;
 			  Type match = null;
@@ -149,11 +147,8 @@ public class Gsort {
 			  }
 				System.out.println("Finished");
 				inbuff.close();
-				instream.close();
 		  	outbuff.flush();
-		  	outstream.flush();
 				outbuff.close();
-				outstream.close();
 				infile.delete();
 				outfile.renameTo(infile);
 			} catch (IOException e) {

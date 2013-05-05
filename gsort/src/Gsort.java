@@ -145,7 +145,7 @@ public class Gsort {
 			  		}
 			  	}
 			  }
-				System.out.println("Finished");
+				System.out.println("gsort: " + args[1] + " finished");
 				inbuff.close();
 		  	outbuff.flush();
 				outbuff.close();

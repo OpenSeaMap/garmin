@@ -1,0 +1,32 @@
+style-file=../styles
+style=oseam
+family-name=Openseamap
+series-name=Openseamap
+description=Openseamap
+overview-mapname=openseamap
+family-id=8800
+product-id=1
+#transparent
+draw-priority=20
+latin1
+remove-short-arcs=0
+#merge-lines
+reduce-point-density=1 #default=2.6
+reduce-point-density-polygon=1 #default=5.2 
+min-size-polygon=1 #default=8
+polygon-size-limits=24:0, 23:0, 20:0, 16:0
+#ignore-maxspeeds
+preserve-element-order
+lower-case
+#add-pois-to-areas
+#ignore-osm-bounds
+#coastlinefile=..\coastlines.osm.pbf
+##generate-sea=multipolygon,extend-sea-sectors,close-gaps=6000,land-tag=natural=background
+##generate-sea=extend-sea-sectors,close-gaps=6000,floodblocker,fbgap=50,fbthres=20,fbratio=0.5
+#generate-sea=multipolygon,extend-sea-sectors,close-gaps=6000
+precomp-sea=../sea.zip
+name-tag-list='name,name:de,name:latin,name:en'
+#index
+tdbfile
+nsis
+gmapsupp

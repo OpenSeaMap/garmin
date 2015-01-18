@@ -32,6 +32,9 @@ logit "getplanet"
 logit "getsea"
 "${WORKDIR}/getsea.sh"|tee -a "${LOGFILE}" || logerr "getsea failed."
 
+logit "getcities"
+"${WORKDIR}/getcites.sh"|tee -a "${LOGFILE}" || logerr "getcities failed."
+
 ## Hier werden die einzelnen Karten erzeugt in der Form:
 # "${WORKDIR}/mkmymap.sh <Dateiname> "left=<x1> right=<x2> bottom=<y1> top=<y2>"|tee -a "${LOGFILE}" || logerr "mkmymap 1 failed"
 

@@ -7,3 +7,22 @@ natural=stream [0x6512 resolution 24]
 natural=water & name=* [0x6603 resolution 24]
 natural=waterfall | waterway=waterfall [0x6508 resolution 24]
 natural=wetland & name=* [0x6513 resolution 24]
+
+#rocks
+seamark:type=rock & seamark:rock:water_level=awash [0x1c09 resolution 20]
+seamark:type=rock & seamark:rock:water_level=covers [0x1C0A resolution 20]
+seamark:type=rock & seamark:rock:water_level=submerged [0x1C0A resolution 20]
+seamark:type=rock & seamark:rock:water_level!=* [0x1C0A resolution 20]
+
+#wrecks
+seamark:type=wreck & seamark:wreck:category=hull_showing [0x1C01 resolution 20]
+seamark:type=wreck & seamark:wreck:category=dangerous [0x1c02 resolution 20]
+seamark:type=wreck & seamark:wreck:category=mast_showing [0x1c02 resolution 20]
+seamark:type=wreck & seamark:wreck:category=non-dangerous [0x1c03 resolution 20]
+seamark:type=wreck & seamark:wreck:category=distributed_remains  [0x1c02 resolution 20]
+seamark:type=wreck [0x1c02 resolution 20]
+waterway=wreck [ 0x1c02 resolution 22 ]
+historic=wreck [ 0x1c02 resolution 22 ]
+
+#obstructions
+seamark:type=obstruction [0x1C00 resolution 20]
